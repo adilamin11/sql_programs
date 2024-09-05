@@ -1,0 +1,89 @@
+1)
+
+select sname from Student201 where sclass='FYBCA';
+ sname 
+-------
+ Ali
+ Jay
+(2 rows)
+
+2)
+
+ select tname,sname from Teacher201,Student201,ST where Teacher201.tno=ST.tno and Student201.sno=ST.sno and tname='Adnan';
+ tname | sname 
+-------+-------
+ Adnan | Omar
+
+3)
+
+fybcadb201=> select* from Teacher201 where tname like'A%';
+ tno | tname | qualification | experience 
+-----+-------+---------------+------------
+ 201 | Arif  | MCA           |          6
+ 204 | Adnan | Ph.D          |          3
+(2 rows)
+
+4)
+
+fybcadb201=> select tname from Teacher201,ST where Teacher201.tno=ST.tno and subject='ARDBMS';
+ tname  
+--------
+ Khalid
+(1 row)
+
+5)
+
+select COUNT(qualification) from Teacher201 where qualification='Ph.D';
+ count 
+-------
+     1
+(1 row)
+
+6)
+
+select COUNT(sname) from Student201 where address='Deccan' group by sname;
+ count 
+-------
+     1
+(1 row)
+
+7)
+
+select* from teacher201 where experience in(select MAX(experience) as experience from Teacher201);
+ tno | tname | qualification | experience 
+-----+-------+---------------+------------
+ 202 | Geeta | Mphil         |         20
+
+
+8)
+
+fybcadb201=> select sname from Student201 where sclass='SYBCA' and address='Sangvi';
+ sname 
+-------
+ Huzef
+(1 row)
+
+9)
+
+select COUNT(sname),tname,subject from Student201,Teacher201,ST where Student201.sno=ST.sno and Teacher201.tno=ST.tno group by sname,tname,subject;
+ count | tname  | subject 
+-------+--------+---------
+     1 | Geeta  | Goolang
+     1 | Arif   | CSS
+     1 | Adnan  | DSA
+     1 | Khalid | ARDBMS
+     1 | Furqan | Python
+(5 rows)
+
+
+10)
+
+select sname from student201,teacher201,st where student201.sno=st.sno and teacher201.tno=st.tno and experience in (select Max(experience) from Teacher201);
+ sname 
+-------
+ Jay
+(1 row)
+
+
+
+

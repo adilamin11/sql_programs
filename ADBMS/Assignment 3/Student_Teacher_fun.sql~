@@ -1,0 +1,19 @@
+ create or replace function store_stu(s_name Student201.sname%type)returns int as'
+
+declare 
+	count integer := 0;
+	rec Teacher201%Rowtype;
+
+Begin 
+
+
+select count(Teacher201.tno) into rec   from Student201,Teacher201,ST where Student201.sno=ST.sno and Teacher201.tno=ST.tno and sname=s_name;
+
+count=count+1;
+raise notice ''%'',rec.tno;
+
+
+return count;
+End;
+
+'Language 'plpgsql';

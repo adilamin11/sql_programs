@@ -1,0 +1,51 @@
+								ASSIGNMENT 2 VIEWS
+
+
+******SET A*******
+Q1]
+
+1)
+
+\i view1fun.sql
+CREATE VIEW
+fybcadb201=> select* from v1;
+ sname  | class  | sum 
+--------+--------+-----
+ Akash  | FyBCA  |  45
+ Khalid | FyBCOM |  64
+ Qasim  | TyBCA  |  16
+ Soham  | SyBCS  |  90
+(4 rows)
+
+
+2)
+
+select* from v20;
+ sname |     sub_name      | marks_scored 
+-------+-------------------+--------------
+ Soham | Political_Science |           90
+(1 row)
+		
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Q2]
+
+1)
+
+select* from v02;
+ dno | dname | lic_no  |   address    | dage | salary | busno | capacity | depot
+name | rno 
+-----+-------+---------+--------------+------+--------+-------+----------+------
+-----+-----
+ 205 | Usaid | 8293175 | Narayan_peth |   26 |  10000 |    17 |       35 | HADAP
+SAR  | 101
+(1 row)
+
+2)
+
+select* from v102;
+ rno |        source        | destination | no_of_stations 
+-----+----------------------+-------------+----------------
+ 101 | NIGDI                | CORPORATION |              5
+(1 row)
+
+
